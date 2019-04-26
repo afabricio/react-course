@@ -1,0 +1,14 @@
+.contextoacorde{
+    flex-wrap: wrap;
+    height: 60px;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    background: lightcoral;
+    border: 1px solid rgb(255, 255, 255);
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+
+    box-sizing: border-box; 
+}
