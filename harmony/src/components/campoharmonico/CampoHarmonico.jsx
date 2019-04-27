@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './CampoHarmonico.css'
-import { TIPOACORDE, getNotaByIntervalo, INTERVALO } from '../../Global';
+import { TIPOACORDE, getNotaByIntervalo } from '../../Global';
 import ContextoAcorde from '../contextoacorde/ContextoAcorde'
 
 export default class CampoHarmonico extends Component{

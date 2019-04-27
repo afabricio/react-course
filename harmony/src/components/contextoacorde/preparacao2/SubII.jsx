@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './SubII.css'
 import { TIPOACORDE, getNotaByIntervalo, INTERVALO } from '../../../Global';
-import ReactTooltip from 'react-tooltip';
+
 
 
 export default class SubII extends Component{
@@ -19,9 +19,9 @@ export default class SubII extends Component{
 
         return (
            
-            <div className="subII" data-tip={this.dominante.SIMBOLO+ TIPOACORDE.DORICO.SIMBOLO }>
+            <div className="subII  tooltip">
 
-                <ReactTooltip />
+                <span class="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.DORICO.SIMBOLO }</span>
             </div>
             
 

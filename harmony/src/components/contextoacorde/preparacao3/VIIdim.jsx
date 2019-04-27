@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './VIIdim.css'
 import { TIPOACORDE, getNotaByIntervalo, INTERVALO } from '../../../Global';
-import ReactTooltip from 'react-tooltip';
+
 
 export default class VIIdim extends Component{
 
@@ -18,9 +18,9 @@ export default class VIIdim extends Component{
 
         return (
            
-            <div className="vIIdim" data-tip={this.vii.SIMBOLO+ TIPOACORDE.ALT.SIMBOLO }>
+            <div className="vIIdim  tooltip" >
 
-                <ReactTooltip />
+                <span class="tooltiptext">{this.vii.SIMBOLO+ TIPOACORDE.ALT.SIMBOLO }</span>
             </div>
             
 
