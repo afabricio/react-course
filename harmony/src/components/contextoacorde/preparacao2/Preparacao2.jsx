@@ -5,6 +5,6 @@ import SubII from './SubII'
 
 export default props =>
                 <div className="preparacao2">
-                        <SubV/>
-                        <SubII/>
+                        <SubV {...props}/>
+                        <SubII {...props}/>
                 </div>

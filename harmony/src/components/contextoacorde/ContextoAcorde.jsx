@@ -13,8 +13,8 @@ export default props =>
 
                 <Alvo {...props} />
 
-                <Preparacao2/>
+                <Preparacao2 {...props}/>
 
-                <Preparacao3/> 
+                <Preparacao3 {...props}/> 
             </div>
 

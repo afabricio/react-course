@@ -7,7 +7,7 @@ import Subdominante3 from './Subdominante3'
 
 export default props =>
                 <div className="subdominante">
-                        <Subdominante1/>
-                        <Subdominante2/>
-                        <Subdominante3/>
+                        <Subdominante1 {...props} />
+                        <Subdominante2 {...props} />
+                        <Subdominante3 {...props} />
                 </div>

@@ -5,7 +5,7 @@ import Dominante from './Dominante'
 
 export default props =>
                 <div className="preparacao1">
-                    <Subdominante/>
+                    <Subdominante {...props} />
                     
                     <Dominante {...props} />
                 </div>

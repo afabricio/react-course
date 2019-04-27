@@ -1,12 +1,7 @@
 import React, {Component} from 'react'
 import './Dominante.css'
 import { TIPOACORDE, getNotaByIntervalo, INTERVALO } from '../../../Global';
-
-/* export default props =>
-                <dominante className="dominante">
-                    {props.tonica.SIMBOLO}
-                    {TIPOACORDES.MIXOLIDIO.SIMBOLO}
-                </dominante> */
+import ReactTooltip from 'react-tooltip';
 
 export default class Dominante extends Component{
 
@@ -22,11 +17,13 @@ export default class Dominante extends Component{
     render(){
 
         return (
-            <div className="dominante">
-                {this.dominante.SIMBOLO}
-                {TIPOACORDE.MIXOLIDIO.SIMBOLO}
+           
+            <div className="dominante" data-tip={this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO }>
+
+                <ReactTooltip />
             </div>
             
+
         )
     }
 

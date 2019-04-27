@@ -4,5 +4,5 @@ import VIIdim from './VIIdim'
 
 export default props =>
                 <div className="preparacao3">
-                        <VIIdim/>
+                        <VIIdim {...props}/>
                 </div>
