@@ -16,10 +16,10 @@ export default class Alvo extends Component{
     
             return (
                
-                <div className="alvo  tooltip" onClick={e=> this.props.click(this.props.tonica.SIMBOLO + this.props.tipoacorde.SIMBOLO)} >
+                <div className="alvo  tooltip" onClick={e=> this.props.click(this.props.tonica.SIMBOLO + this.props.modo.SIMBOLO)} >
                             {this.props.tonica.SIMBOLO}
-                        {this.props.tipoacorde.SIMBOLO }
-                        <span id='ssss' className="tooltiptext">{this.props.tonica.SIMBOLO+ this.props.tipoacorde.SIMBOLO }</span>
+                        {this.props.modo.SIMBOLO }
+                        <span id='ssss' className="tooltiptext">{this.props.tonica.SIMBOLO+ this.props.modo.SIMBOLO }</span>
                 </div>
                 
 

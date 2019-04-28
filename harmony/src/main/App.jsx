@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './App.css'
 import Ciclo from '../components/ciclo/Ciclo'
 import Display from '../components/display/Display'
-import { TIPOACORDE, NOTA }  from '../Global'
+import { MODO, NOTA }  from '../Global'
 
 
 const initialState = {

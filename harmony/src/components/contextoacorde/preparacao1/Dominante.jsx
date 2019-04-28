@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import './Dominante.css'
-import { TIPOACORDE, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
 
 
 export default class Dominante extends Component{
 
-    dominante;
+
 
     constructor(props) {
         super();
@@ -13,16 +13,16 @@ export default class Dominante extends Component{
 
     }
 
-//data-tip={this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO }
+//data-tip={this.dominante.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO }
     render(){
 
         return (
            
             
-            <div className="dominante tooltip" onClick={e=> this.props.click(this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO)}>
+            <div className="dominante tooltip" onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO)}>
 
 
-                <span className="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO }</span>
+                <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO }</span>
             </div>
            
             

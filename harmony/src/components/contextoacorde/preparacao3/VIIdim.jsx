@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './VIIdim.css'
-import { TIPOACORDE, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
 
 
 export default class VIIdim extends Component{
@@ -18,9 +18,9 @@ export default class VIIdim extends Component{
 
         return (
            
-            <div className="vIIdim  tooltip"  onClick={e=> this.props.click(this.vii.SIMBOLO+ TIPOACORDE.ALT.SIMBOLO) }>
+            <div className="vIIdim  tooltip"  onClick={e=> this.props.click(this.vii.SIMBOLO+ MODO.ALT.SIMBOLO) }>
 
-                <span className="tooltiptext">{this.vii.SIMBOLO+ TIPOACORDE.ALT.SIMBOLO }</span>
+                <span className="tooltiptext">{this.vii.SIMBOLO+ MODO.ALT.SIMBOLO }</span>
             </div>
             
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Subdominante1.css';
 
-import { TIPOACORDE, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
 
 export default class Subdominante1 extends Component{
 
@@ -14,9 +14,9 @@ export default class Subdominante1 extends Component{
 
     render(){
         return (  
-            <div className="subdominante1  tooltip" onClick={e=> this.props.click(this.subdominante1.SIMBOLO + TIPOACORDE.DORICO.SIMBOLO)} >
+            <div className="subdominante1  tooltip" onClick={e=> this.props.click(this.subdominante1.SIMBOLO + MODO.DORICO.SIMBOLO)} >
 
-                <span className="tooltiptext">{this.subdominante1.SIMBOLO + TIPOACORDE.DORICO.SIMBOLO } </span>
+                <span className="tooltiptext">{this.subdominante1.SIMBOLO + MODO.DORICO.SIMBOLO } </span>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './SubII.css'
-import { TIPOACORDE, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
 
 
 
@@ -19,9 +19,9 @@ export default class SubII extends Component{
 
         return (
            
-            <div className="subII  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ TIPOACORDE.DORICO.SIMBOLO) }>
+            <div className="subII  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.DORICO.SIMBOLO) }>
 
-                <span className="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.DORICO.SIMBOLO }</span>
+                <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.DORICO.SIMBOLO }</span>
             </div>
             
 
