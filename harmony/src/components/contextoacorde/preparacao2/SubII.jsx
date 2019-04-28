@@ -9,7 +9,7 @@ export default class SubII extends Component{
     dominante;
 
     constructor(props) {
-        super();
+        super(props);
         this.dominante = getNotaByIntervalo(props.tonica,INTERVALO.QUINTA_AUMENTADA)
 
     }
@@ -19,9 +19,9 @@ export default class SubII extends Component{
 
         return (
            
-            <div className="subII  tooltip">
+            <div className="subII  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ TIPOACORDE.DORICO.SIMBOLO) }>
 
-                <span class="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.DORICO.SIMBOLO }</span>
+                <span className="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.DORICO.SIMBOLO }</span>
             </div>
             
 

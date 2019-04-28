@@ -8,7 +8,7 @@ export default class CampoHarmonico extends Component{
 
 
     constructor(props) {
-        super();
+        super(props);
 
 
     }
@@ -20,7 +20,7 @@ export default class CampoHarmonico extends Component{
         var modo = this.props.modo;
         this.props.modo.ESCALA.forEach(i => {
 
-            rows.push(<ContextoAcorde tonica={getNotaByIntervalo(this.props.tonica,i)} tipoacorde={modo} />);
+            rows.push(<ContextoAcorde tonica={getNotaByIntervalo(this.props.tonica,i)} tipoacorde={modo} click={this.props.click} />);
        
             modo = TIPOACORDE[modo.PROXIMO];
         });
@@ -31,16 +31,8 @@ export default class CampoHarmonico extends Component{
 
                  
 
-{rows}
-                {
+                {rows}
 
-                    
-                    this.props.modo.ESCALA.forEach(element => {
-                        
-                       // React.createElement('ContextoAcorde', {"tonica":this.props.tonica,"tipoacorde":TIPOACORDE.JONIO}, this);
-                       
-                    })
-                }
                 
 
 

@@ -11,7 +11,7 @@ export default class SubV extends Component{
     dominante;
 
     constructor(props) {
-        super();
+        super(props);
         this.dominante = getNotaByIntervalo(props.tonica,INTERVALO.SEGUNDA_MENOR)
 
     }
@@ -21,9 +21,9 @@ export default class SubV extends Component{
 
         return (
            
-            <div className="subv  tooltip" >
+            <div className="subv  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO) } >
 
-                <span class="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO }</span>
+                <span className="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO }</span>
             </div>
             
 

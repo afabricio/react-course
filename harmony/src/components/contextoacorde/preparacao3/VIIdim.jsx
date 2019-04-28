@@ -8,7 +8,7 @@ export default class VIIdim extends Component{
     vii;
 
     constructor(props) {
-        super();
+        super(props);
         this.vii = getNotaByIntervalo(props.tonica,INTERVALO.SETIMA_MAIOR)
 
     }
@@ -18,9 +18,9 @@ export default class VIIdim extends Component{
 
         return (
            
-            <div className="vIIdim  tooltip" >
+            <div className="vIIdim  tooltip"  onClick={e=> this.props.click(this.vii.SIMBOLO+ TIPOACORDE.ALT.SIMBOLO) }>
 
-                <span class="tooltiptext">{this.vii.SIMBOLO+ TIPOACORDE.ALT.SIMBOLO }</span>
+                <span className="tooltiptext">{this.vii.SIMBOLO+ TIPOACORDE.ALT.SIMBOLO }</span>
             </div>
             
 

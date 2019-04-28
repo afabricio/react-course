@@ -1,22 +1,49 @@
 import React, {Component} from 'react'
 import './App.css'
-import CampoHarmonico from '../components/campoharmonico/CampoHarmonico'
+import Ciclo from '../components/ciclo/Ciclo'
+import Display from '../components/display/Display'
 import { TIPOACORDE, NOTA }  from '../Global'
 
-export default class App extends Component{
 
-    
+const initialState = {
+    displayValue:'*'
+
+}
+
+
+export default class App extends Component{
+ 
+    state= {...initialState}
+
+
+    constructor(props) {
+        super(props);
+
+
+        this.addChord = this.addChord.bind(this);
+        this.clearDisplay = this.clearDisplay.bind(this);
+        
+
+      }
+
+    addChord(chord){
+
+        const displayValue = this.state.displayValue+' '+chord;
+        this.setState({displayValue})
+    }
+
+    clearDisplay(){
+
+        this.setState({...initialState});
+
+    }
 
     render(){
         return (
 			<div className="app">
-                <CampoHarmonico tonica={NOTA.DO} modo={TIPOACORDE.JONIO} />
-                <CampoHarmonico tonica={NOTA.RE} modo={TIPOACORDE.DORICO} />
-                <CampoHarmonico tonica={NOTA.MI} modo={TIPOACORDE.FRIGIO} />
-                <CampoHarmonico tonica={NOTA.FA} modo={TIPOACORDE.LIDIO} />
-                <CampoHarmonico tonica={NOTA.SOL} modo={TIPOACORDE.MIXOLIDIO} />
-                <CampoHarmonico tonica={NOTA.LA} modo={TIPOACORDE.EOLIO} />
-                <CampoHarmonico tonica={NOTA.SI} modo={TIPOACORDE.LOCRIO} />
+                <Ciclo  click={this.addChord}  clear={this.clearDisplay} />
+               <Display value={this.state.displayValue}/>
+
             </div>
             
         )

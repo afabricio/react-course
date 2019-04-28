@@ -9,25 +9,28 @@ import './Alvo.css'
 export default class Alvo extends Component{
 
 
-        constructor(props) {
-            super();
- 
-    
-        }
-    
+
+
     
         render(){
     
             return (
                
-                <div className="alvo  tooltip" >
+                <div className="alvo  tooltip" onClick={e=> this.props.click(this.props.tonica.SIMBOLO + this.props.tipoacorde.SIMBOLO)} >
                             {this.props.tonica.SIMBOLO}
                         {this.props.tipoacorde.SIMBOLO }
-                        <span class="tooltiptext">{this.props.tonica.SIMBOLO+ this.props.tipoacorde.SIMBOLO }</span>
+                        <span id='ssss' className="tooltiptext">{this.props.tonica.SIMBOLO+ this.props.tipoacorde.SIMBOLO }</span>
                 </div>
                 
+
     
             )
+
+
         }
     
     } 
+
+
+
+

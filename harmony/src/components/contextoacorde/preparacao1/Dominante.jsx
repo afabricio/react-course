@@ -19,10 +19,10 @@ export default class Dominante extends Component{
         return (
            
             
-            <div className="dominante tooltip" >
+            <div className="dominante tooltip" onClick={e=> this.props.click(this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO)}>
 
 
-                <span class="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO }</span>
+                <span className="tooltiptext">{this.dominante.SIMBOLO+ TIPOACORDE.MIXOLIDIO.SIMBOLO }</span>
             </div>
            
             
