@@ -13,16 +13,17 @@ export default class Dominante extends Component{
 
     }
 
-//data-tip={this.dominante.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO }
+
     render(){
 
         return (
            
             
-            <div className="dominante tooltip" onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO)}>
+            <div className="dominante tooltip" onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO)}>
 
 
-                <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO }</span>
+                <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO }</span>
+                <img src={require('../../../image/dominante.png')}  />
             </div>
            
             

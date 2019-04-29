@@ -19,9 +19,10 @@ export default class SubII extends Component{
 
         return (
            
-            <div className="subII  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.DORICO.SIMBOLO) }>
+            <div className="subII  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.NATURAL.DORICO.SIMBOLO) }>
 
-                <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.DORICO.SIMBOLO }</span>
+                <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.NATURAL.DORICO.SIMBOLO }</span>
+                <img src={require('../../../image/subii.png')}  />
             </div>
             
 

@@ -84,258 +84,271 @@ export const NOTA = Object.freeze(
 
 export const MODO = Object.freeze(
     {
-        "JONIO":{
-            "SIMBOLO":"7M",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MAIOR],
-                "PROXIMO": "DORICO"
+        "NATURAL":{
+            "JONIO":{
+                "SIMBOLO":"7M",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MAIOR],
+                    'PARENT':'NATURAL',
+                    "PROXIMO": 'DORICO'
+            },
+            "DORICO":{
+                "SIMBOLO":"m7",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'NATURAL',
+                "PROXIMO": "FRIGIO"
+            },        
+            "FRIGIO":{
+                "SIMBOLO":"m7",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MENOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'NATURAL',
+                "PROXIMO": "LIDIO"
+            }, 
+            "LIDIO":{
+                "SIMBOLO":"7M",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA_AUMENTADA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MAIOR],
+                    'PARENT':'NATURAL',
+                "PROXIMO": "MIXOLIDIO"
+            }, 
+            "MIXOLIDIO":{
+                "SIMBOLO":"7",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MENOR,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'NATURAL',
+                "PROXIMO": "EOLIO"
+            },
+            "EOLIO":{
+                "SIMBOLO":"m7",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'NATURAL',
+                "PROXIMO": "LOCRIO"
+            }, 
+            
+            "LOCRIO":{
+                "SIMBOLO":"m7b5",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MENOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA_DIMINUTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'NATURAL',
+                "PROXIMO": "JONIO"
+            }
+
         },
-        "DORICO":{
-            "SIMBOLO":"m7",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "FRIGIO"
-        },        
-        "FRIGIO":{
-            "SIMBOLO":"m7",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MENOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "LIDIO"
-        }, 
-        "LIDIO":{
-            "SIMBOLO":"7M",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA_AUMENTADA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MAIOR],
-            "PROXIMO": "MIXOLIDIO"
-        }, 
-        "MIXOLIDIO":{
-            "SIMBOLO":"7",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MENOR,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "EOLIO"
+        "HARMONICA":{
+            "EOLIO7MAIOR":{
+                "SIMBOLO":"m7M",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_MAIOR],
+                    'PARENT':'HARMONICA',
+                "PROXIMO": "LOCRIO6MAIOR"
+            }, 
+            
+            "LOCRIO6MAIOR":{
+                "SIMBOLO":"m7(b5)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MENOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA_DIMINUTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'HARMONICA',
+                "PROXIMO": "JONIO5AUM"
+            },
+            "JONIO5AUM":{
+                "SIMBOLO":"7M(5#)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA_AUMENTADA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MAIOR],
+                    'PARENT':'HARMONICA',
+                    "PROXIMO": "DORICO4AUM"
+            },
+            "DORICO4AUM":{
+                "SIMBOLO":"m7(4#)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA_AUMENTADA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'HARMONICA',
+                "PROXIMO": "FRIGIO3"
+            },        
+            "FRIGIO3":{
+                "SIMBOLO":"7(13b)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MENOR,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'HARMONICA',
+                "PROXIMO": "LIDIO2AUM"
+            }, 
+            "LIDIO2AUM":{
+                "SIMBOLO":"7M(9#)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_AUMENTADA,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA_AUMENTADA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MAIOR],
+                    'PARENT':'HARMONICA',
+                "PROXIMO": "ALT"
+            }, 
+            "ALT":{
+                "SIMBOLO":"°",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MENOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA_DIMINUTA,
+                    INTERVALO.QUINTA_DIMINUTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_DIMINUTA],
+                    'PARENT':'HARMONICA',
+                "PROXIMO": "EOLIO7MAIOR"
+            }
         },
-        "EOLIO":{
-            "SIMBOLO":"m7",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "LOCRIO"
-        }, 
-        
-        "LOCRIO":{
-            "SIMBOLO":"m7b5",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MENOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA_DIMINUTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "JONIO"
-        },
+        "MELODICA":{
+            "DORICO7MAIOR":{
+                "SIMBOLO":"m7(13)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MAIOR],
+                    'PARENT':'MELODICA',
+                "PROXIMO": "FRIGIO6MAIOR"
+            },
+            "FRIGIO6MAIOR":{
+                "SIMBOLO":"m7(9b)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MENOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'MELODICA',
+                "PROXIMO": "LIDIO5AUM"
+            }, 
+            "LIDIO5AUM":{
+                "SIMBOLO":"7M(5#)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA_AUMENTADA,
+                    INTERVALO.QUINTA_AUMENTADA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MAIOR],
+                    'PARENT':'MELODICA',
+                "PROXIMO": "MIXOLIDIO4AUM"
+            }, 
+            "MIXOLIDIO4AUM":{
+                "SIMBOLO":"7(4#)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA_AUMENTADA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MAIOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'MELODICA',
+                "PROXIMO": "MIXOLIDIO6MENOR"
+            },
+            "MIXOLIDIO6MENOR":{
+                "SIMBOLO":"7(13b)",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MAIOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'MELODICA',
+                "PROXIMO": "LOCRIO2AUM"
+            },
     
-        //HARMONICA
-
-
-        "EOLIO7MAIOR":{
-            "SIMBOLO":"m7M",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_MAIOR],
-            "PROXIMO": "LOCRIO6MAIOR"
-        }, 
-        
-        "LOCRIO6MAIOR":{
-            "SIMBOLO":"m7(b5)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MENOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA_DIMINUTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "JONIO5AUM"
-        },
-        "JONIO5AUM":{
-            "SIMBOLO":"7M(5#)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA_AUMENTADA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MAIOR],
-                "PROXIMO": "DORICO4AUM"
-        },
-        "DORICO4AUM":{
-            "SIMBOLO":"m7(4#)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA_AUMENTADA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "FRIGIO3"
-        },        
-        "FRIGIO3":{
-            "SIMBOLO":"7(13b)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MENOR,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "LIDIO2AUM"
-        }, 
-        "LIDIO2AUM":{
-            "SIMBOLO":"7M(9#)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_AUMENTADA,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA_AUMENTADA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MAIOR],
-            "PROXIMO": "ALT"
-        }, 
-        "ALT":{
-            "SIMBOLO":"°",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MENOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA_DIMINUTA,
-                INTERVALO.QUINTA_DIMINUTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_DIMINUTA],
-            "PROXIMO": "EOLIO7MAIOR"
-        },
-
-
-
-        //MELODICA
-
-        "DORICO7MAIOR":{
-            "SIMBOLO":"m7(13)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MAIOR],
-            "PROXIMO": "FRIGIO6MAIOR"
-        },
-        "FRIGIO6MAIOR":{
-            "SIMBOLO":"m7(9b)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MENOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "LIDIO5AUM"
-        }, 
-        "LIDIO5AUM":{
-            "SIMBOLO":"7M(5#)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA_AUMENTADA,
-                INTERVALO.QUINTA_AUMENTADA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MAIOR],
-            "PROXIMO": "MIXOLIDIO4AUM"
-        }, 
-        "MIXOLIDIO4AUM":{
-            "SIMBOLO":"7(4#)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA_AUMENTADA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MAIOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "MIXOLIDIO6MENOR"
-        },
-        "MIXOLIDIO6MENOR":{
-            "SIMBOLO":"7(13b)",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MAIOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "LOCRIO2AUM"
-        },
-
-                
-        "LOCRIO2AUM":{
-            "SIMBOLO":"m7b5",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MAIOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA,
-                INTERVALO.QUINTA_DIMINUTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "SUPERLOCRIO"
-        },
-                
-        "SUPERLOCRIO":{
-            "SIMBOLO":"m7b5",
-            "ESCALA":[INTERVALO.TONICA,
-                INTERVALO.SEGUNDA_MENOR,
-                INTERVALO.TERCA_MENOR,
-                INTERVALO.QUARTA_DIMINUTA,
-                INTERVALO.QUINTA_DIMINUTA,
-                INTERVALO.SEXTA_MENOR,
-                INTERVALO.SETIMA_MENOR],
-            "PROXIMO": "DORICO7MAIOR"
+                    
+            "LOCRIO2AUM":{
+                "SIMBOLO":"m7b5",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MAIOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA,
+                    INTERVALO.QUINTA_DIMINUTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'MELODICA',
+                "PROXIMO": "SUPERLOCRIO"
+            },
+                    
+            "SUPERLOCRIO":{
+                "SIMBOLO":"m7b5",
+                "INTERVALOS":[INTERVALO.TONICA,
+                    INTERVALO.SEGUNDA_MENOR,
+                    INTERVALO.TERCA_MENOR,
+                    INTERVALO.QUARTA_DIMINUTA,
+                    INTERVALO.QUINTA_DIMINUTA,
+                    INTERVALO.SEXTA_MENOR,
+                    INTERVALO.SETIMA_MENOR],
+                    'PARENT':'MELODICA',
+                "PROXIMO": "DORICO7MAIOR"
+            }
         }
 
-
-
-       
-
-                
-       
     });
 
 
@@ -364,6 +377,7 @@ export const MODO = Object.freeze(
 
     }
 
+ 
     export const getNotaByIntervalo = (nota, intervalo)=>{
 
         var resultId = getIntervalo(nota.ID, intervalo);

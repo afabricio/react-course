@@ -7,22 +7,20 @@ export default class CampoHarmonico extends Component{
 
 
 
-    constructor(props) {
-        super(props);
-
-
-    }
-
 
     render(){
 
         let rows = [];
-        var modo = this.props.modo;
-        this.props.modo.ESCALA.forEach(i => {
+        var m = this.props.modo;
 
-            rows.push(<ContextoAcorde tonica={getNotaByIntervalo(this.props.tonica,i)} modo={modo} click={this.props.click} />);
-       
-            modo = MODO[modo.PROXIMO];
+
+
+       // var arrayMODOS = m.parentNode;
+        this.props.modo.INTERVALOS.forEach(i => {
+
+            rows.push(<ContextoAcorde tonica={getNotaByIntervalo(this.props.tonica,i)} modo={m} click={this.props.click} />);
+   
+            m = MODO[m.PARENT][m.PROXIMO];
         });
 
         return (

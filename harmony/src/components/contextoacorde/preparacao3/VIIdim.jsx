@@ -18,9 +18,10 @@ export default class VIIdim extends Component{
 
         return (
            
-            <div className="vIIdim  tooltip"  onClick={e=> this.props.click(this.vii.SIMBOLO+ MODO.ALT.SIMBOLO) }>
+            <div className="vIIdim  tooltip"  onClick={e=> this.props.click(this.vii.SIMBOLO+ MODO.HARMONICA.ALT.SIMBOLO) }>
 
-                <span className="tooltiptext">{this.vii.SIMBOLO+ MODO.ALT.SIMBOLO }</span>
+                <span className="tooltiptext">{this.vii.SIMBOLO+ MODO.HARMONICA.ALT.SIMBOLO }</span>
+                <img src={require('../../../image/vii.png')}  />
             </div>
             
 

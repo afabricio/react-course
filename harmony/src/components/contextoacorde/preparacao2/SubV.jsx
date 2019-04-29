@@ -21,9 +21,10 @@ export default class SubV extends Component{
 
         return (
            
-            <div className="subv  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO) } >
+            <div className="subv  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO) } >
 
-                <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO }</span>
+                <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO }</span>
+                <img src={require('../../../image/subv.png')}  />
             </div>
             
 

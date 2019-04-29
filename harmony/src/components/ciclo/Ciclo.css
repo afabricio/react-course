@@ -1,20 +1,29 @@
+
+.quadro{
+    display: flex;
+   flex-direction: column; 
+   align-items: center;
+   position: relative;
+  height: 425px;
+
+ 
+   border-bottom: 1px dotted black;
+}
+
 .ciclo{
 
     display: flex;
     flex-direction: row;
+    position: absolute
+  
 
 
 }
 
-.quadroecontrole{
-    display: flex;
-    flex-direction: column;
-align-items: center;
-
-
-}
 
 .controle{
-    
-
+    /* position: relative;
+    top: 430px; */
+    position: relative;
+   
 }

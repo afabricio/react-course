@@ -15,8 +15,9 @@ export default class Subdominante3 extends Component{
 
     render(){
         return (  
-            <div className="subdominante3  tooltip" onClick={e=> this.props.click(this.subdominante3.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO)}>
-                <span className="tooltiptext">{this.subdominante3.SIMBOLO+ MODO.MIXOLIDIO.SIMBOLO }</span>
+            <div className="subdominante3  tooltip" onClick={e=> this.props.click(this.subdominante3.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO)}>
+                <span className="tooltiptext">{this.subdominante3.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO }</span>
+                <img src={require('../../../image/subdominante3.png')}  />
             </div>
         )
     }

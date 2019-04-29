@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './Ciclo.css'
 import CampoHarmonico from '../campoharmonico/CampoHarmonico'
-import { MODO, NOTA }  from '../../Global'
+import { MODO, NOTA, getNotaByIntervalo }  from '../../Global'
 import ReactDOM from 'react-dom'
 
 
@@ -9,28 +9,102 @@ export default class Ciclo extends Component{
 
 
 
+
     constructor(props) {
         super(props);
 
 
+      
+
+        this.notasCiclo = [];
+
+
+
+
+
+       for(var M in MODO.HARMONICA){
+            this.modoNatural =MODO.NATURAL[M];  
+            break;
+        }  
+        for(var M in MODO.MELODICA){
+            this.modoNatural =MODO.NATURAL[M];  
+            break;
+        }
+
+        var n = props.tonica;
+         for (var i = 0; i < 12; i++) { 
+            this.notasCiclo.push(n);
+            n = getNotaByIntervalo(n, props.intervalo) ;
+        }
+
+
         this.spinRigth = this.spinRigth.bind(this);
         this.spinLeft = this.spinLeft.bind(this);
-
-
+        this.showNatural = this.showNatural.bind(this);
+        this.showHarmonica = this.showHarmonica.bind(this);
+        this.showMelodica = this.showMelodica.bind(this);
+        
+        
+        
       }
     
+      showNatural(){
+
+        var listaciclos = ReactDOM.findDOMNode(this).querySelectorAll('.ciclo');
+
+        listaciclos.forEach((ciclo,index)=>{
+            if(ciclo.id === 'natural'){
+                ciclo.style.visibility= 'visible';
+            }else{
+                ciclo.style.visibility= 'hidden';
+            }       
+         });
+
+      }
+
+      showHarmonica(){
+
+        var listaciclos = ReactDOM.findDOMNode(this).querySelectorAll('.ciclo');
+
+        listaciclos.forEach((ciclo,index)=>{
+            if(ciclo.id === 'harmonica'){
+                ciclo.style.visibility= 'visible';
+            }else{
+                ciclo.style.visibility= 'hidden';
+            }       
+         });
+
+      }
+
+      showMelodica(){
+
+        var listaciclos = ReactDOM.findDOMNode(this).querySelectorAll('.ciclo');
+
+        listaciclos.forEach((ciclo,index)=>{
+            if(ciclo.id === 'melodica'){
+                ciclo.style.visibility= 'visible';
+            }else{
+                ciclo.style.visibility= 'hidden';
+            }       
+         });
+
+      }
 
     spinRigth() {
-       var ciclo = ReactDOM.findDOMNode(this).firstChild;
-       ciclo.insertBefore(ciclo.lastChild,ciclo.firstChild )
-      
+       var listaciclos = ReactDOM.findDOMNode(this).querySelectorAll('.ciclo');
+
+       listaciclos.forEach((ciclo,index)=>{
+          ciclo.insertBefore(ciclo.lastChild,ciclo.firstChild )
+        });
+
     }
 
     spinLeft() {
-        var ciclo = ReactDOM.findDOMNode(this).firstChild;
 
-
-        ciclo.appendChild(ciclo.firstChild )
+        var listaciclos = ReactDOM.findDOMNode(this).querySelectorAll('.ciclo');
+        listaciclos.forEach((ciclo,index)=>{
+            ciclo.appendChild(ciclo.firstChild )
+        });
        
      }   
 
@@ -42,54 +116,81 @@ export default class Ciclo extends Component{
 
         return (
             <React.Fragment>
-           <div className="quadroecontrole">
-           maior
-                <div className="ciclo">
-                    <CampoHarmonico  tonica={NOTA.DO} modo={MODO.JONIO} click={this.props.click} />
-                    <CampoHarmonico tonica={NOTA.RE} modo={MODO.DORICO} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.MI} modo={MODO.FRIGIO} click={this.props.click}/>
-                    <CampoHarmonico tonica={NOTA.FA} modo={MODO.LIDIO} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.SOL} modo={MODO.MIXOLIDIO} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.LA} modo={MODO.EOLIO} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.SI} modo={MODO.LOCRIO} click={this.props.click}/>
+ 
+                    <div className="quadro">
+    
+                        <div className="ciclo" id="natural" >
 
-                    
-                </div>
+                            {
+                                this.notasCiclo.map((nota, index) => {
 
-            harmonica
-                <div className="ciclo">
-                    <CampoHarmonico  tonica={NOTA.DO} modo={MODO.JONIO5AUM} click={this.props.click} />
-                    <CampoHarmonico tonica={NOTA.RE} modo={MODO.DORICO4AUM} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.MI} modo={MODO.FRIGIO3} click={this.props.click}/>
-                    <CampoHarmonico tonica={NOTA.FA} modo={MODO.LIDIO2AUM} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.SOLSUS} modo={MODO.ALT} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.LA} modo={MODO.EOLIO7MAIOR} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.SI} modo={MODO.LOCRIO6MAIOR} click={this.props.click}/>
+                                    var modo;
+                                    var cont =0;
+                                    for(var M in MODO.NATURAL){
+                                        modo =MODO.NATURAL[M];  
+                                        if (this.props.grau == cont++) break;
+                                   }
 
-                    
-                </div>
-
-            melodica
-                <div className="ciclo">
-                    <CampoHarmonico  tonica={NOTA.DO} modo={MODO.LIDIO5AUM} click={this.props.click} />
-                    <CampoHarmonico tonica={NOTA.RE} modo={MODO.MIXOLIDIO4AUM} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.MI} modo={MODO.MIXOLIDIO6MENOR} click={this.props.click}/>
-                    <CampoHarmonico tonica={NOTA.FASUS} modo={MODO.LOCRIO2AUM} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.SOLSUS} modo={MODO.SUPERLOCRIO} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.LA} modo={MODO.DORICO7MAIOR} click={this.props.click}/>
-                    <CampoHarmonico  tonica={NOTA.SI} modo={MODO.FRIGIO6MAIOR} click={this.props.click}/>
-
-                    
-                </div>
+                                    return <CampoHarmonico  tonica={nota} modo={modo} click={this.props.click} />
+                                  })
+                            }
+                        
+                            
 
 
-                <div  className="controle">
-                    <input type="button" value="<<" onClick={this.spinLeft} />
-                    <input type="button" value=">>" onClick={this.spinRigth} />
-                    <input type="button" value="clear" onClick={e=> this.props.clear()} />
-                </div>
-            </div>
-      
+                            
+                        </div>
+
+
+                        <div className="ciclo" id="harmonica" style={{visibility: 'hidden'}} >
+                        
+                        {
+                            this.notasCiclo.map((nota, index) => {
+                                var modo;
+                                var cont =0;
+                                for(var M in MODO.HARMONICA){
+                                    modo =MODO.HARMONICA[M];  
+                                    if (this.props.grau == cont++) break;
+                                }
+                                return <CampoHarmonico  tonica={nota} modo={modo} click={this.props.click} />
+                            })
+                        }
+  
+                        </div>
+        
+
+
+                        <div className="ciclo" id="melodica" style={{visibility: 'hidden'}}>
+                        
+                        {
+                            this.notasCiclo.map((nota, index) => {
+                                var modo;
+                                var cont =0;
+                                for(var M in MODO.MELODICA){
+                                    modo =MODO.MELODICA[M];  
+                                    if (this.props.grau == cont++) break;
+                                }
+                                return <CampoHarmonico  tonica={nota} modo={modo} click={this.props.click} />
+                            })
+                        }
+
+                            
+ 
+                        </div>
+
+
+
+                    </div>
+
+                    <div  className="controle">
+                        <input type="button" value="<<" onClick={this.spinLeft} />
+                        <input type="button" value=">>" onClick={this.spinRigth} />
+                        <input type="button" value="clear" onClick={e=> this.props.clear()} />
+                        <input type="button" value="natural" onClick={this.showNatural} />
+                        <input type="button" value="harmonica" onClick={this.showHarmonica} />
+                        <input type="button" value="melodica" onClick={this.showMelodica} />
+                    </div>
+
             </React.Fragment>
         )
     }

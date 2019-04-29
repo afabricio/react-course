@@ -14,9 +14,10 @@ export default class Subdominante1 extends Component{
 
     render(){
         return (  
-            <div className="subdominante1  tooltip" onClick={e=> this.props.click(this.subdominante1.SIMBOLO + MODO.DORICO.SIMBOLO)} >
+            <div className="subdominante1  tooltip" onClick={e=> this.props.click(this.subdominante1.SIMBOLO + MODO.NATURAL.DORICO.SIMBOLO)} >
 
-                <span className="tooltiptext">{this.subdominante1.SIMBOLO + MODO.DORICO.SIMBOLO } </span>
+                <span className="tooltiptext">{this.subdominante1.SIMBOLO + MODO.NATURAL.DORICO.SIMBOLO } </span>
+                <img src={require('../../../image/subdominante1.png')}  />
             </div>
         )
     }

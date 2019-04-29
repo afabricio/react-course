@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import './App.css'
 import Ciclo from '../components/ciclo/Ciclo'
 import Display from '../components/display/Display'
-import { MODO, NOTA }  from '../Global'
+import { NOTA, INTERVALO }  from '../Global'
+
 
 
 const initialState = {
@@ -41,11 +42,11 @@ export default class App extends Component{
     render(){
         return (
 			<div className="app">
-                <Ciclo  click={this.addChord}  clear={this.clearDisplay} />
+                <Ciclo tonica={NOTA.DO} intervalo={INTERVALO.QUINTA} grau={0} click={this.addChord}  clear={this.clearDisplay} />
                <Display value={this.state.displayValue}/>
 
             </div>
-            
+             
         )
     }
 
