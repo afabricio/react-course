@@ -1,15 +1,24 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Arthur Oliveira",
-            "email": "aoliveira@cod.com"
-        }, {
-            "id": 2,
-            "name": "Maria Julia",
-            "email": "mjulia@email.com"
-
-        }
-    ]
-
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur Oliveira",
+      "email": "aoliveira@cod.com"
+    },
+    {
+      "id": 2,
+      "name": "Maria Julia",
+      "email": "mjulia@email.com"
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 4
+    }
+  ]
 }
