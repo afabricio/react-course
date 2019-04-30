@@ -7,8 +7,10 @@ import {BrowserRouter} from 'react-router-dom'
 
 import Logo from '../components/template/Logo'
 import Nav from '../components/template/Nav'
-import Routes from './Routes'
+import Main from '../components/template/Main'
 import Footer from '../components/template/Footer'
+import Routes from './Routes'
+
 
 
 
@@ -20,6 +22,8 @@ export default props=>
         <Logo/>
         <Nav/>
         <Routes />
+
+
         <Footer/>
     </div>
 </BrowserRouter>
