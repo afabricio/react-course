@@ -11,6 +11,15 @@ export default class VIIdim extends Component{
         super(props);
         this.vii = getNotaByIntervalo(props.tonica,INTERVALO.SETIMA_MAIOR)
 
+        this.state = {img :require('../../../image/vii.png')};
+    }
+
+    mouseOut() {
+       this.setState({img :require('../../../image/vii.png')});
+    }
+      
+    mouseOver() {
+       this.setState({img :require('../../../image/vii2.png')});
     }
 
 
@@ -18,10 +27,14 @@ export default class VIIdim extends Component{
 
         return (
            
-            <div className="vIIdim  tooltip"  onClick={e=> this.props.click(this.vii.SIMBOLO+ MODO.HARMONICA.ALT.SIMBOLO) }>
+            <div className="vIIdim  tooltip"  
+            onMouseOver={() => this.mouseOver()} 
+                    onMouseOut={() => this.mouseOut()}
+            
+            onClick={e=> this.props.click(this.vii.SIMBOLO+ MODO.HARMONICA.ALT.SIMBOLO) }>
 
                 <span className="tooltiptext">{this.vii.SIMBOLO+ MODO.HARMONICA.ALT.SIMBOLO }</span>
-                <img src={require('../../../image/vii.png')}  />
+                <img  src={this.state.img}  />
             </div>
             
 
