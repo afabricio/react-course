@@ -7,7 +7,7 @@ import Alvo from './Alvo'
 
 
 export default props =>
-            <div className="contextoacorde" >
+            <div className="contextoacorde" style= {props.principal?{width: '150px'}:{width: ''}} >
                 
                 <Preparacao1 {...props} />
 

@@ -12,6 +12,15 @@ export default class SubII extends Component{
         super(props);
         this.dominante = getNotaByIntervalo(props.tonica,INTERVALO.QUINTA_AUMENTADA)
 
+        this.state = {img :require('../../../image/subii.png')};
+    }
+
+    mouseOut() {
+       this.setState({img :require('../../../image/subii.png')});
+    }
+      
+    mouseOver() {
+       this.setState({img :require('../../../image/subii2.png')});
     }
 
 
@@ -19,10 +28,13 @@ export default class SubII extends Component{
 
         return (
            
-            <div className="subII  tooltip"  onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.NATURAL.DORICO.SIMBOLO) }>
+            <div className="subII  tooltip"  
+            onMouseOver={() => this.mouseOver()} 
+                    onMouseOut={() => this.mouseOut()}
+            onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.NATURAL.DORICO.SIMBOLO) }>
 
                 <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.NATURAL.DORICO.SIMBOLO }</span>
-                <img src={require('../../../image/subii.png')}  />
+                <img  src={this.state.img}  />
             </div>
             
 

@@ -13,14 +13,7 @@ export default class Ciclo extends Component{
     constructor(props) {
         super(props);
 
-
-      
-
         this.notasCiclo = [];
-
-
-
-
 
        for(var M in MODO.HARMONICA){
             this.modoNatural =MODO.NATURAL[M];  
@@ -131,7 +124,7 @@ export default class Ciclo extends Component{
                                         if (this.props.grau == cont++) break;
                                    }
 
-                                    return <CampoHarmonico  tonica={nota} modo={modo} click={this.props.click} />
+                                    return <CampoHarmonico  principal={index==0?true:false} tonica={nota} modo={modo} click={this.props.click} />
                                   })
                             }
                         
@@ -152,7 +145,7 @@ export default class Ciclo extends Component{
                                     modo =MODO.HARMONICA[M];  
                                     if (this.props.grau == cont++) break;
                                 }
-                                return <CampoHarmonico  tonica={nota} modo={modo} click={this.props.click} />
+                                return <CampoHarmonico  principal={index==0?true:false} tonica={nota} modo={modo} click={this.props.click} />
                             })
                         }
   
@@ -170,7 +163,7 @@ export default class Ciclo extends Component{
                                     modo =MODO.MELODICA[M];  
                                     if (this.props.grau == cont++) break;
                                 }
-                                return <CampoHarmonico  tonica={nota} modo={modo} click={this.props.click} />
+                                return <CampoHarmonico principal={index==0?true:false} tonica={nota} modo={modo} click={this.props.click} />
                             })
                         }
 

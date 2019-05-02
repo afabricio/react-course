@@ -29,8 +29,7 @@ export default class App extends Component{
 
     addChord(chord){
 
-        const displayValue = this.state.displayValue+' '+chord;
-        this.setState({displayValue})
+        this.setState({displayValue : this.state.displayValue+' '+chord})
     }
 
     clearDisplay(){
