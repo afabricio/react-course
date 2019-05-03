@@ -13,6 +13,6 @@ aside.logo img{
 
 @media(max-width: 576px){
     aside.logo img{
-        width: 350px;
+        width: 350px;               
     }
 }
