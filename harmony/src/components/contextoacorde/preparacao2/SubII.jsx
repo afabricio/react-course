@@ -12,15 +12,25 @@ export default class SubII extends Component{
         super(props);
         this.dominante = getNotaByIntervalo(props.tonica,INTERVALO.QUINTA_AUMENTADA)
 
-        this.state = {img :require('../../../image/subii.png')};
+        if(this.props.principal)
+            this.state = {img :require('../../../image/subiiPrinc.png')};
+        else
+            this.state = {img :require('../../../image/subii.png')};
     }
 
     mouseOut() {
-       this.setState({img :require('../../../image/subii.png')});
+       if(this.props.principal)
+            this.setState({img :require('../../../image/subiiPrinc.png')});
+       else
+            this.setState({img :require('../../../image/subii.png')});
+
     }
       
     mouseOver() {
-       this.setState({img :require('../../../image/subii2.png')});
+       if(this.props.principal)
+            this.setState({img :require('../../../image/subii2Princ.png')});
+       else
+            this.setState({img :require('../../../image/subii2.png')});
     }
 
 

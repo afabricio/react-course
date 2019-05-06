@@ -10,15 +10,34 @@ export default class Dominante extends Component{
     constructor(props) {
         super();
         this.dominante = getNotaByIntervalo(props.tonica,INTERVALO.QUINTA)
-        this.state = {img :require('../../../image/dominante.png')};
+
+        if(props.principal === true){
+            this.state = {img :require('../../../image/dominantePrinc.png')};
+        }
+        else{
+            this.state = {img :require('../../../image/dominante.png')};
+        }
+
+
+       
     }
 
     mouseOut() {
-        this.setState({img :require('../../../image/dominante.png')});
+        
+
+        if(this.props.principal)
+            this.setState({img :require('../../../image/dominantePrinc.png')});
+        else
+            this.setState({img :require('../../../image/dominante.png')});
+
      }
        
      mouseOver() {
-        this.setState({img :require('../../../image/dominante2.png')});
+
+        if(this.props.principal)       
+            this.setState({img :require('../../../image/dominante2Princ.png')});
+        else
+            this.setState({img :require('../../../image/dominante2.png')});    
      }
 
     render(){

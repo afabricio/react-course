@@ -10,16 +10,25 @@ export default class VIIdim extends Component{
     constructor(props) {
         super(props);
         this.vii = getNotaByIntervalo(props.tonica,INTERVALO.SETIMA_MAIOR)
-
-        this.state = {img :require('../../../image/vii.png')};
+        if(this.props.principal)
+            this.state = {img :require('../../../image/viiPrinc.png')};
+        else
+            this.state = {img :require('../../../image/vii.png')};
     }
 
     mouseOut() {
-       this.setState({img :require('../../../image/vii.png')});
+        if(this.props.principal)
+            this.setState({img :require('../../../image/viiPrinc.png')});
+       else
+            this.setState({img :require('../../../image/vii.png')});
     }
       
     mouseOver() {
-       this.setState({img :require('../../../image/vii2.png')});
+        if(this.props.principal)
+            this.setState({img :require('../../../image/vii2Princ.png')});
+       else
+            this.setState({img :require('../../../image/vii2.png')});
+
     }
 
 

@@ -11,15 +11,26 @@ export default class Subdominante3 extends Component{
     constructor(props) {
         super();
         this.subdominante3 = getNotaByIntervalo(props.tonica,INTERVALO.SEGUNDA_MAIOR)
-        this.state = {img :require('../../../image/subdominante3.png')};
+
+        if(props.principal === true)
+            this.state = {img :require('../../../image/subdominante3Princ.png')};
+        else
+            this.state = {img :require('../../../image/subdominante3.png')};
+            
     }
 
     mouseOut() {
-        this.setState({img :require('../../../image/subdominante3.png')});
+        if(this.props.principal === true)
+            this.setState({img :require('../../../image/subdominante3Princ.png')});
+        else
+            this.setState({img :require('../../../image/subdominante3.png')});
      }
        
      mouseOver() {
-        this.setState({img :require('../../../image/subdominante3B.png')});
+        if(this.props.principal === true)
+            this.setState({img :require('../../../image/subdominante3BPrinc.png')});
+        else
+            this.setState({img :require('../../../image/subdominante3B.png')});
      }
 
     render(){
