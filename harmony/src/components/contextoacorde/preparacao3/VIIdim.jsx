@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './VIIdim.css'
-import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO, ACORDE } from '../../../Global';
 
 
 export default class VIIdim extends Component{
@@ -40,7 +40,7 @@ export default class VIIdim extends Component{
             onMouseOver={() => this.mouseOver()} 
                     onMouseOut={() => this.mouseOut()}
             
-            onClick={e=> this.props.click(this.vii.SIMBOLO+ MODO.HARMONICA.ALT.SIMBOLO) }>
+            onClick={e=> this.props.click(new ACORDE(this.vii,MODO.HARMONICA.ALT)) }>
 
                 <span className="tooltiptext">{this.vii.SIMBOLO+ MODO.HARMONICA.ALT.SIMBOLO }</span>
                 <img  src={this.state.img}  />

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Subdominante1.css';
 
-import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO, ACORDE } from '../../../Global';
 
 export default class Subdominante1 extends Component{
 
@@ -40,7 +40,7 @@ export default class Subdominante1 extends Component{
             <div className="subdominante1  tooltip" 
             onMouseOver={() => this.mouseOver()} 
             onMouseOut={() => this.mouseOut()}
-            onClick={e=> this.props.click(this.subdominante1.SIMBOLO + MODO.NATURAL.DORICO.SIMBOLO)} >
+            onClick={e=> this.props.click(new ACORDE(this.subdominante1 , MODO.NATURAL.DORICO))} >
 
                 <span className="tooltiptext">{this.subdominante1.SIMBOLO + MODO.NATURAL.DORICO.SIMBOLO } </span>
                 <img  src={this.state.img}  />

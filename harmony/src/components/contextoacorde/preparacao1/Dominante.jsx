@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './Dominante.css'
-import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO, ACORDE } from '../../../Global';
 
 
 export default class Dominante extends Component{
@@ -48,7 +48,7 @@ export default class Dominante extends Component{
             <div className="dominante tooltip" 
             onMouseOver={() => this.mouseOver()} 
             onMouseOut={() => this.mouseOut()}
-             onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO)}>
+             onClick={e=> this.props.click(new ACORDE(this.dominante,MODO.NATURAL.MIXOLIDIO))}>
 
 
                 <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO }</span>

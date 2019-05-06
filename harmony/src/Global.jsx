@@ -25,7 +25,35 @@ export const INTERVALO = Object.freeze(
         
     });
 
+    export var ACORDE = function(tonica, modo, grau){
+        this.tonica = tonica;
+        this.modo = modo;
+        this.grau = grau
 
+
+        this.getNotasEmTercas = function(){
+
+            console.log('GRAU '+grau);
+            var notas=[];
+            var offset = 48;
+            var n1 = getNotaByIntervalo(tonica,modo.INTERVALOS[0]).ID + offset;
+            var n2 = getNotaByIntervalo(tonica,modo.INTERVALOS[2]).ID + offset;
+            var n3 = getNotaByIntervalo(tonica,modo.INTERVALOS[4]).ID + offset;
+            var n4 = getNotaByIntervalo(tonica,modo.INTERVALOS[6]).ID + offset;
+
+            if(n2 < n1) n2 += 12;
+            if(n3 < n2) n3 += 12;
+            if(n4 < n3) n4 += 12;
+
+            notas.push(n1 -12);//set like bass
+            notas.push(n2);
+            notas.push(n3);
+            notas.push(n4);
+
+            return notas;
+        }
+
+    }
 
 export const NOTA = Object.freeze(
     {

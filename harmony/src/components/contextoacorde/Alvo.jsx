@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import './Alvo.css'
-
-
+import { ACORDE } from '../../Global';
 
 
 
@@ -51,7 +50,7 @@ export default class Alvo extends Component{
                 <div className ='alvo  tooltip'
                     onMouseOver={() => this.mouseOver()} 
                     onMouseOut={() => this.mouseOut()}  
-                    onClick={e=> this.props.click(this.props.tonica.SIMBOLO + this.props.modo.SIMBOLO)} >
+                    onClick={e=> this.props.click(new ACORDE(this.props.tonica, this.props.modo, this.props.grau))} >
                 <img src={this.state.img} style={{position:'absolute',align:'center'}} />
                         <span style={this.props.principal?
                             {position:'absolute', top: '20px', left: '5px', fontWeight: 'bold', fontSize: '12px',color:'white'}:

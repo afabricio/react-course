@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './SubII.css'
-import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO, ACORDE } from '../../../Global';
 
 
 
@@ -41,7 +41,7 @@ export default class SubII extends Component{
             <div className="subII  tooltip"  
             onMouseOver={() => this.mouseOver()} 
                     onMouseOut={() => this.mouseOut()}
-            onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.NATURAL.DORICO.SIMBOLO) }>
+            onClick={e=> this.props.click(new ACORDE(this.dominante, MODO.NATURAL.DORICO)) }>
 
                 <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.NATURAL.DORICO.SIMBOLO }</span>
                 <img  src={this.state.img}  />

@@ -16,10 +16,11 @@ export default class CampoHarmonico extends Component{
 
 
        // var arrayMODOS = m.parentNode;
+       var grau=0;
         this.props.modo.INTERVALOS.forEach(i => {
 
            
-            rows.push(<ContextoAcorde principal={this.props.principal} tonica={getNotaByIntervalo(this.props.tonica,i)} modo={m} click={this.props.click} />);
+            rows.push(<ContextoAcorde grau={grau++} principal={this.props.principal} tonica={getNotaByIntervalo(this.props.tonica,i)} modo={m} click={this.props.click} />);
    
             m = MODO[m.PARENT][m.PROXIMO];
         });

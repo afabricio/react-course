@@ -122,7 +122,7 @@ export default class Ciclo extends Component{
                                     for(var M in MODO.NATURAL){
                                         modo =MODO.NATURAL[M];  
                                         if (this.props.grau == cont++) break;
-                                   }
+                                    }
 
                                     return <CampoHarmonico  principal={index==0?true:false} tonica={nota} modo={modo} click={this.props.click} />
                                   })

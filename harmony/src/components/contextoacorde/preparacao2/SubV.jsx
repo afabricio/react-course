@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './SubV.css'
-import { MODO, getNotaByIntervalo, INTERVALO } from '../../../Global';
+import { MODO, getNotaByIntervalo, INTERVALO,ACORDE } from '../../../Global';
 
 
 
@@ -42,7 +42,7 @@ export default class SubV extends Component{
             <div className="subv  tooltip"  
             onMouseOver={() => this.mouseOver()} 
                     onMouseOut={() => this.mouseOut()}
-            onClick={e=> this.props.click(this.dominante.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO) } >
+            onClick={e=> this.props.click(new ACORDE(this.dominante,MODO.NATURAL.MIXOLIDIO)) } >
 
                 <span className="tooltiptext">{this.dominante.SIMBOLO+ MODO.NATURAL.MIXOLIDIO.SIMBOLO }</span>
                 <img  src={this.state.img}   />
